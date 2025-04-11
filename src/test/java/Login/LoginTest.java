@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-
 import org.testng.Reporter;
+import org.testng.annotations.Test;
 
 import GenericUtilities.Property_Utility;
 import GenericUtilities.WebDriver_Utility;
@@ -16,11 +16,14 @@ import POM_Pages.loginPomPage;
 
 public class LoginTest {
 
-	public static void main(String[] args) throws InterruptedException, IOException {
+	public static WebDriver sdriver = null;
+
+	@Test
+	public void test() throws InterruptedException, IOException {
 
 		WebDriver_Utility w_util = new WebDriver_Utility();
-		
-        //Fetch Data from Property file
+
+		// Fetch Data from Property file
 		Property_Utility pro = new Property_Utility();
 		String Browser = (pro.FetchDataFromPropertyFile("Browser"));
 		String url = (pro.FetchDataFromPropertyFile("url"));
@@ -36,6 +39,7 @@ public class LoginTest {
 			driver = new EdgeDriver();
 		}
 
+		sdriver = driver;
 		// Maximize the window
 		w_util.maximizeTheWindow(driver);
 
@@ -70,8 +74,8 @@ public class LoginTest {
 			Reporter.log("Test Pass: Button text matches exactly", true);
 		} else {
 			Reporter.log("Test Fail: Expected 'Login with email' but found '" + button.getText() + "'", true);
-		}
 
+		}
 		// close the browser
 		w_util.QuitTheBrowser(driver);
 	}
