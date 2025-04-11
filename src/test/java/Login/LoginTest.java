@@ -19,7 +19,8 @@ public class LoginTest {
 	public static void main(String[] args) throws InterruptedException, IOException {
 
 		WebDriver_Utility w_util = new WebDriver_Utility();
-
+		
+        //Fetch Data from Property file
 		Property_Utility pro = new Property_Utility();
 		String Browser = (pro.FetchDataFromPropertyFile("Browser"));
 		String url = (pro.FetchDataFromPropertyFile("url"));
