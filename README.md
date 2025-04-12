@@ -23,11 +23,11 @@ Execution Steps
 .Navigate to Login/LoginTest.java
 .Run the file as a TestNg suite using your IDE or Run the TestExecution.xml  file
 
-.Launches browser specified in config
-.Navigates to Intervue.io
-.Clicks on login
-.Switches to login tab
-.Enters email and password
-.Hovers and verifies the login button
-.Logs results in TestNG Reporter
-.Closes the browser
+1. Launches browser specified in config
+2. Navigates to Intervue.io
+3. Clicks on login
+4. Switches to login tab
+5. Enters email and password
+6. Hovers and verifies the login button
+7. Logs results in TestNG Reporter
+8. Closes the browser
